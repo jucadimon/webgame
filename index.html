@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="estilos/estilos.css">
+    <title>JUEGO HTML5 JCDM</title>
+</head>
+<body>
+    
+    <div id="informacion" class="screen">
+        <p>Un juego de: <img src="imagenes/logojuan.jpg" alt="logojuan.jpg"></p>
+        <img src="imagenes/personaje.png" class='p' alt="personaje.png">
+        <div class="datos">
+            <h1>Plataformas planeta vegita</h1>
+            <button class="btn start" id="otro">Iniciar</button>
+            <p>
+                <h3>Instrucciones</h3>
+                <p>Mover personaje con flechas</p>
+                <p>Saltar flecha hacia arriba</p>
+            </p>
+        </div>
+    </div>
+    
+    <div id="ganar" class="screen">
+        <p>Un juego de: <img src="imagenes/logojuan.jpg" alt="logojuan.jpg"></p>
+        <img src="imagenes/personaje.png" class='p' alt="personaje.png">
+        <div class="datos">
+            <h1>!!!Ganastes!!!</h1>
+            <button class="btn start" id="otro">Juega de nuevo</button>
+            <p>
+                <h3>Puntaje</h3>
+                <p id='score'></p>
+                <p>Recarga la pagina</p>
+            </p>
+        </div>
+    </div>
+    
+    
+    <div id="perder" class="screen">
+        <p>Un juego de: <img src="imagenes/logojuan.jpg" alt="logojuan.jpg"></p>
+        <img src="imagenes/personaje.png" class='p' alt="personaje.png">
+        <div class="datos">
+            <h1>!!!Perdistes!!!</h1>
+            <p id='score'></p>
+            <p>Pero puedes iniciar de nuevo :P</p>
+            <button class="btn start" id="otro">Reiniciar</button>
+            <p>
+                <h3>Instrucciones</h3>
+                <p>Mover personaje con flechas</p>
+                <p>Saltar flecha hacia arriba</p>
+                <p>Recarga la pagina</p>
+            </p>
+        </div>
+    </div>
+    
+    <div id="juego">
+       <!-- este es el contenedor del juego --> 
+    </div>
+    
+    <script src="js/kinetic-v4.3.3.min.js"></script>
+    <script src="js/preloadjs-0.1.0.min.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/heroe.js"></script>
+    <script src="js/Enemigo.js"></script>
+    <script src="js/plataforma.js"></script>
+    <script src="js/moneda.js"></script>
+    <script src="js/puerta.js"></script>
+    <script src="js/llave.js"></script>
+    <script src="js/main.js"></script>
+    
+    <script>
+        window.addEventListener('load',function(){
+            var iniciadores = document.getElementsByClassName('start');
+            for(i in iniciadores){
+                var boton = iniciadores[i];
+                boton.addEventListener('click',iniciarJuego);
+            }
+        });
+        //document.querySelector('#informacion').style.display = 'block';
+    </script>
+    
+    
+    
+</body>
+</html>
